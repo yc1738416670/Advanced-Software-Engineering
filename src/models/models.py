@@ -1,5 +1,6 @@
 
 from src.models.mnist_cnn import Mnist_CNN
+from src.models.mnist_alexnet import Mnist_AlexNet
 
 def choose_model(options):
     model_name = str(options['model_name']).lower()
