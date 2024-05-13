@@ -1,2 +1,3 @@
 # Advanced-Software-Engineering
-直接运行main.py文件,会得到原本CNN模型的结果，我们可以加入--model = mnist_alexnet得到AlexNet网络的结果
+直接运行python main.py --model_name mnist_cnn 就是原本CNN的结果
+直接运行python main.py --model_name mnist_alexnet 就是原本AlexNet网络的结果
