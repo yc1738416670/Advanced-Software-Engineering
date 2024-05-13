@@ -17,7 +17,7 @@ class Mnist_AlexNet(nn.Module):
         self.bn3 = nn.BatchNorm2d(256)
         self.pool3 = nn.MaxPool2d(kernel_size=2, stride=2, padding=0)
         
-        self.fc1 = nn.Linear(4*4*256, 1024)
+        self.fc1 = nn.Linear(3*3*256, 1024)
         self.fc2 = nn.Linear(1024, 512)
         self.fc3 = nn.Linear(512, 10)
 
@@ -29,7 +29,7 @@ class Mnist_AlexNet(nn.Module):
         tensor = self.pool2(tensor)
         tensor = F.relu(self.bn3(self.conv3(tensor)))
         tensor = self.pool3(tensor)
-        tensor = tensor.view(-1, 4*4*256)
+        tensor = tensor.view(-1, 3*3*256)
         tensor = F.relu(self.fc1(tensor))
         tensor = F.relu(self.fc2(tensor))
         tensor = self.fc3(tensor)
